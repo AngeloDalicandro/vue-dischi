@@ -1,7 +1,14 @@
 <template>
 
     <main>
-        <BodyComponent />
+        <div class="container">
+            <BodyComponent v-for="album, index in albums" :key="index"
+            :img="album.poster"
+            :name="album.title"
+            :author="album.author"
+            :year="album.year"
+            />
+        </div>
     </main>
 
 </template>
@@ -41,5 +48,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
 </style>
